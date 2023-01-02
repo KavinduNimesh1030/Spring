@@ -12,8 +12,9 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
     @PutMapping("/saveCustomer")
-    public CustomerDto SaveCustomer( @RequestBody CustomerDto customerDto){
-       return  customerService.SaveCustomer(customerDto);
+    public String SaveCustomer( @RequestBody CustomerDto customerDto){
+       customerService.SaveCustomer(customerDto);
+       return "Success..!";
 
     }
 }

@@ -12,9 +12,9 @@ import javax.transaction.Transactional;
 public class CustomerService{
     @Autowired
     private CustomerRepo customerRepo;
-    public CustomerDto SaveCustomer(CustomerDto customerDto){
+    public String SaveCustomer(CustomerDto customerDto){
 
         customerRepo.save(new Customer(customerDto.getId(),customerDto.getName(),customerDto.getAddress(),customerDto.getSalary()));
-        return customerDto;
+        return "Success";
     }
 }
